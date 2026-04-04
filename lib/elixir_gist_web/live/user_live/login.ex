@@ -25,7 +25,7 @@ defmodule ElixirGistWeb.UserLive.Login do
           </.header>
         </div>
 
-        <div :if={local_mail_adapter?()} class="alert alert-info">
+        <div :if={local_mail_adapter?()} class="rounded-xl border border-sky-200 bg-sky-50 p-4 text-sky-900">
           <.icon name="hero-information-circle" class="size-6 shrink-0" />
           <div>
             <p>You are running the local mail adapter.</p>
@@ -52,12 +52,12 @@ defmodule ElixirGistWeb.UserLive.Login do
             required
             phx-mounted={JS.focus()}
           />
-          <.button class="btn btn-primary w-full">
+          <.button class="w-full">
             Log in with email <span aria-hidden="true">→</span>
           </.button>
         </.form>
 
-        <div class="divider">or</div>
+        <div class="my-6 border-t border-slate-200 text-center text-sm text-slate-500">or</div>
 
         <.form
           :let={f}
@@ -83,10 +83,10 @@ defmodule ElixirGistWeb.UserLive.Login do
             autocomplete="current-password"
             spellcheck="false"
           />
-          <.button class="btn btn-primary w-full" name={@form[:remember_me].name} value="true">
+          <.button class="w-full" name={@form[:remember_me].name} value="true">
             Log in and stay logged in <span aria-hidden="true">→</span>
           </.button>
-          <.button class="btn btn-primary btn-soft w-full mt-2">
+          <.button class="mt-2 w-full">
             Log in only this time
           </.button>
         </.form>
